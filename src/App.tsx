@@ -60,52 +60,18 @@ const RightColumn = styled(Resizable)
 const App: React.FC = () => {
   return (
     <Container>
-      <LeftColumn
-        enable={{
-          top:false,
-          right:true,
-          bottom:false,
-          left:false,
-          topRight:false,
-          bottomRight:false,
-          bottomLeft:false,
-          topLeft:false
-        }}
-      >
+      <LeftColumn enable={{ right:true}}>
         Left Column
       </LeftColumn>
       <CanvasContainer>
         <Canvas />
       </CanvasContainer>
-      <RightColumn
-        enable={{
-          top:false,
-          right:false,
-          bottom:false,
-          left:true,
-          topRight:false,
-          bottomRight:false,
-          bottomLeft:false,
-          topLeft:false
-        }}
-      >
+      <RightColumn enable={{ left:true }}>
         Right Column
       </RightColumn>
-      <BottomRow
-        enable={{
-          top:true,
-          right:false,
-          bottom:false,
-          left:false,
-          topRight:false,
-          bottomRight:false,
-          bottomLeft:false,
-          topLeft:false
-        }}
-      >
+      <BottomRow enable={{ top:true }}>
         Bottom Row
       </BottomRow>
-
     </Container>
   );
 }
