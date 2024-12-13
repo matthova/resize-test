@@ -1,7 +1,7 @@
-import React from 'react';
-import { Resizable } from 're-resizable';
-import styled from 'styled-components';
-import { Canvas } from './Canvas';
+import React from "react";
+import { Resizable } from "re-resizable";
+import styled from "styled-components";
+import { Canvas } from "./Canvas";
 
 const Container = styled.div`
   position: absolute;
@@ -24,56 +24,47 @@ const Container = styled.div`
   }
 `;
 
-const LeftColumn = styled(Resizable)
-.attrs({
-  defaultSize:{
+const LeftColumn = styled(Resizable).attrs({
+  defaultSize: {
     width: 320,
-    height: 'auto'
-  }
+    height: "auto",
+  },
 })`
   grid-area: 1 / 1 / 3 / 2;
-`
+`;
 const CanvasContainer = styled.div`
   grid-area: 1 / 2 / 2 / 3;
 `;
 
-const BottomRow = styled(Resizable)
-.attrs({
-  defaultSize:{
-    width: 'auto',
-    height: 200
-  }
+const BottomRow = styled(Resizable).attrs({
+  defaultSize: {
+    width: "auto",
+    height: 200,
+  },
 })`
   grid-area: 2 / 2 / 3 / 3;
 `;
 
-const RightColumn = styled(Resizable)
-.attrs({
+const RightColumn = styled(Resizable).attrs({
   defaultSize: {
     width: 320,
-    height: 'auto',
-  }
+    height: "auto",
+  },
 })`
   grid-area: 1 / 3 / 3 / 4;
-`
+`;
 
 const App: React.FC = () => {
   return (
     <Container>
-      <LeftColumn enable={{ right:true}}>
-        Left Column
-      </LeftColumn>
+      <LeftColumn enable={{ right: true }}>Left Column</LeftColumn>
       <CanvasContainer>
         <Canvas />
       </CanvasContainer>
-      <RightColumn enable={{ left:true }}>
-        Right Column
-      </RightColumn>
-      <BottomRow enable={{ top:true }}>
-        Bottom Row
-      </BottomRow>
+      <RightColumn enable={{ left: true }}>Right Column</RightColumn>
+      <BottomRow enable={{ top: true }}>Bottom Row</BottomRow>
     </Container>
   );
-}
+};
 
 export default App;
